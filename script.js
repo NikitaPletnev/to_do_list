@@ -23,23 +23,26 @@ $(document).ready(function(){
     }
     $('#left-column').append(s);
     $('#name-text').val('');
-    $('#description-text').val('');
-     
-     //Кнопка удаления дел//
-    $('.close-button').on('click',function(){
-      $(this).closest('.deal-column').remove();
+    $('#description-text').val(''); 
+  });
+});
+//Кнопка свертывания и развертывания блока
+$(document).ready(function(){
+  $('#left-column').on("click", ".arrow", function(){
+    $(this).closest('.deal-column').find('.deal-desc').slideToggle();
+    $(this).toggleClass('rotation');
+  });
+});
+//Кнопка удаления дел
+$(document).ready(function(){
+	$('#left-column').on("click",".close-button",function(){
+		 $(this).closest('.deal-column').remove();
+		 //Возвращение блока при пустом списке 
       if (!$('#deals').length && !$('.deal-column').length){
         var p = '';
         p += '<div id = "deals">Список пуст...</div>';
         $('#left-column').append(p);
       };
-    });
-    //Кнопка сворачивания и разворачивания окон//
-    $('.arrow').on('click',function(){
-      //Сворачивание и разворачивание элемента "Описание"//
-      $(this).closest('.deal-column').find('.deal-desc').slideToggle();
-      // Поворот стрелочки//
-      $(this).toggleClass('rotation');
-    });
-  });
-});
+	})
+})
+   
