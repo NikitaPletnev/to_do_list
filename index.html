@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
+<meta charset="utf-8">
 <head>
+
 	<title>Список дел</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Подключаю бутстрап -->
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<script src = "jquery-3.3.1.min.js"></script>
 	<script src = "script.js"></script>
 </head>
 <body>
-<div id = "parent">
-     <div id = "left-column">Список дел:
+<div class = "container">    
+<div class = "row parent">
+     <div class = "col-md-6 left-column">Список дел:
         <div id = "deals">Список пуст...</div>
      </div>
-     <div id = "right-column">Добавить новое дело
+     <div class = "col-md-6 right-column">Добавить новое дело
         <div id = "deal-form">
         	<div id = "deal-name">*&nbsp;&nbsp;Название
         		<textarea id = "name-text" maxlength="35"></textarea>
@@ -23,5 +28,6 @@
         </div>
      </div>
  </div>
+</div>
 </body>
 </html>
