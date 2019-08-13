@@ -21,28 +21,27 @@ $(document).ready(function(){
     if ($('#deals').length){
       $('#deals').remove();
     }
-    $('#left-column').append(s);
+    $('.left-column').append(s);
     $('#name-text').val('');
     $('#description-text').val(''); 
   });
 });
 //Кнопка свертывания и развертывания блока
 $(document).ready(function(){
-  $('#left-column').on("click", ".arrow", function(){
+  $('.left-column').on("click", ".arrow", function(){
     $(this).closest('.deal-column').find('.deal-desc').slideToggle();
     $(this).toggleClass('rotation');
   });
 });
 //Кнопка удаления дел
 $(document).ready(function(){
-	$('#left-column').on("click",".close-button",function(){
+	$('.left-column').on("click",".close-button",function(){
 		 $(this).closest('.deal-column').remove();
 		 //Возвращение блока при пустом списке 
       if (!$('#deals').length && !$('.deal-column').length){
         var p = '';
         p += '<div id = "deals">Список пуст...</div>';
-        $('#left-column').append(p);
+        $('.left-column').append(p);
       };
 	})
 })
-   
